@@ -1,0 +1,38 @@
+ALGORITHM main
+VAR
+    word_entered : CHAR
+
+BEGIN
+
+    Read ("Write a word")
+    Write word_entered
+    //check if it is a palindrome.
+    IF isPalindrome(word_entered) THEN
+    Read word_entered , ("it is palindrome") 
+    ELSE
+    Read word_entered , ("It is not palindrome")
+
+    END_IF
+END
+
+FUNCTION isPalindrome(word) : CHAR 
+
+VAR
+// example gag; kayak; php; radar
+    reverse_word : CHAR 
+
+BEGIN
+// Each letter is placed consecutively in the “ reverse_word ” variable.
+
+    reverse_word <="" 
+    FOR i FROM length(mot) -1 TO 0 STEP -1  DO
+        reverse_word <= reverse_word + word[i] 
+    END_FOR
+    
+    FOR i FROM 0 TO length(word) -1 STEP 1  DO
+        IF word[i] != reverse_word[i]  THEN
+            RETURN FALSE 
+        END_IF
+    END_FOR
+    RETURN TRUE 
+END
